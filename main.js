@@ -3,17 +3,19 @@
 // const path = require("path");
 // console.log(path.parse(__filename));
 // -----------------------------------------------os module ---------------------------------
-const os = require("os");
-console.log("Free Ram", os.freemem());
-console.log("Total Ram", os.totalmem());
+// const os = require("os");
+// console.log("Free Ram", os.freemem());
+// console.log("Total Ram", os.totalmem());
 // ----------------------------------------------file system module--------------------------
-// const fs = require("fs");
+const fs = require("fs");
 // console.log(fs.readdirSync("./"));
+
+// this button code is better for async
+
 // fs.readdir("./", (err, files) => {
 //   console.log(err);
 //   console.log(files);
 // });
-// console.log("alireza");
 // --------------------------------------------events-------------------------------------------
 // const Events = require("events");
 
