@@ -11,5 +11,8 @@
   "dependencies": {
     "express": "^4.19.2",
     "jalali-moment": "^3.3.11"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9"
   }
 }

@@ -7,12 +7,13 @@
 // console.log(os.freemem())
 // console.log(os.totalmem())
 // ----------------------------------------------file system module--------------------------
-const fs = require("fs");
+// const fs = require("fs");
 // console.log(fs.readdirSync("./"));
-fs.readdir("./", (err, files) => {
-  console.log(err);
-  console.log(files);
-});
+// fs.readdir("./", (err, files) => {
+//   console.log(err);
+//   console.log(files);
+// });
+console.log("alireza")
 // --------------------------------------------events-------------------------------------------
 // const Events = require("events");
 
@@ -41,10 +42,10 @@ fs.readdir("./", (err, files) => {
 // });
 // server.listen("3000");
 // ---------------------------------------------------package manage in node js -----------------------------------
-const express = require("express")
+// const express = require("express")
 
-const app = express()
-app.get("/",(req,res)=> {
-  res.send("ok-200")
-})
-app.listen(3000,()=>console.log("connected"))
+// const app = express()
+// app.get("/",(req,res)=> {
+//   res.send("ok-200")
+// })
+// app.listen(3000,()=>console.log("connected"))
