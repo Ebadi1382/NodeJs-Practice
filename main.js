@@ -1,7 +1,7 @@
 // const { alireza, alireza2, alireza3 } = require("./main");
 // ----------------------------------------------path module-----------------------------------
-// const path = require("path");
-// console.log(path.parse(__dirname));
+const path = require("path");
+console.log(path.parse(__filename));
 // -----------------------------------------------os module ---------------------------------
 // const os = require("os")
 // console.log(os.freemem())
@@ -13,7 +13,7 @@
 //   console.log(err);
 //   console.log(files);
 // });
-console.log("alireza")
+// console.log("alireza");
 // --------------------------------------------events-------------------------------------------
 // const Events = require("events");
 
