@@ -19,6 +19,9 @@ const alireza4 = (a, b) => {
 // single export
 // module.exports = alireza;
 
+console.log(__filename);
+console.log(__dirname);
+
 module.exports = {
   alireza,
   alireza2,
