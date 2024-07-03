@@ -1,11 +1,11 @@
 // const { alireza, alireza2, alireza3 } = require("./main");
 // ----------------------------------------------path module-----------------------------------
-const path = require("path");
-console.log(path.parse(__filename));
+// const path = require("path");
+// console.log(path.parse(__filename));
 // -----------------------------------------------os module ---------------------------------
-// const os = require("os")
-// console.log(os.freemem())
-// console.log(os.totalmem())
+const os = require("os");
+console.log("Free Ram", os.freemem());
+console.log("Total Ram", os.totalmem());
 // ----------------------------------------------file system module--------------------------
 // const fs = require("fs");
 // console.log(fs.readdirSync("./"));
