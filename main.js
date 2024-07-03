@@ -7,7 +7,7 @@
 // console.log("Free Ram", os.freemem());
 // console.log("Total Ram", os.totalmem());
 // ----------------------------------------------file system module--------------------------
-const fs = require("fs");
+// const fs = require("fs");
 // console.log(fs.readdirSync("./"));
 
 // this button code is better for async
@@ -17,16 +17,16 @@ const fs = require("fs");
 //   console.log(files);
 // });
 // --------------------------------------------events-------------------------------------------
-// const Events = require("events");
+const Events = require("events");
 
-// const emiter = new Events();
+const emiter = new Events();
 
-// emiter.on("car", (e) => {
-//   console.log(e);
-//   console.log("car created");
-// });
+emiter.on("car", (e) => {
+  console.log(e);
+  console.log("car created");
+});
 
-// emiter.emit("car", { time: Date.now(), cout: 13 });
+emiter.emit("car", { time: Date.now(), cout: 13 });
 // --------------------------------------------------------------http module(res,req)------------------------------
 // const http = require("http");
 
