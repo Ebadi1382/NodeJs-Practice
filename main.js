@@ -17,32 +17,31 @@
 //   console.log(files);
 // });
 // --------------------------------------------events-------------------------------------------
-const Events = require("events");
+// const Events = require("events");
 
-const emiter = new Events();
+// const emiter = new Events();
 
-emiter.on("car", (e) => {
-  console.log(e);
-  console.log("car created");
-});
-
-emiter.emit("car", { time: Date.now(), cout: 13 });
-// --------------------------------------------------------------http module(res,req)------------------------------
-// const http = require("http");
-
-// const moment = require("jalali-moment");
-// console.log(moment(new Date()).locale("fa").format("YYYY/MM/DD"));
-// const server = http.createServer((req, res) => {
-//   console.log("runned");
-//   console.log(req.url);
-//   if (req.url === "/products") {
-//     res.write(JSON.stringify({ product: [moment(new Date()).locale("fa").format("YYYY/MM/DD")] }));
-//   } else {
-//     res.write("route not found");
-//   }
-//   res.end();
+// emiter.on("car", (e) => {
+//   console.log(e);
+//   console.log("car created");
 // });
-// server.listen("3000");
+
+// emiter.emit("car", { time: Date.now(), cout: 13 });
+// --------------------------------------------------------------http module(res,req)------------------------------
+const http = require("http");
+const moment = require("jalali-moment");
+// console.log(moment(new Date()).locale("fa").format("YYYY/MM/DD"));
+const server = http.createServer((req, res) => {
+  console.log("runned");
+  console.log(req.url);
+  if (req.url === "/products") {
+    res.write(JSON.stringify({ product: [moment(new Date()).locale("fa").format("YYYY/MM/DD")] }));
+  } else {
+    res.write("route not found");
+  }
+  res.end();
+});
+server.listen("3000");
 // ---------------------------------------------------package manage in node js -----------------------------------
 // const express = require("express")
 
