@@ -28,22 +28,22 @@
 
 // emiter.emit("car", { time: Date.now(), cout: 13 });
 // --------------------------------------------------------------http module(res,req)------------------------------
-const http = require("http");
-const moment = require("jalali-moment");
-// console.log(moment(new Date()).locale("fa").format("YYYY/MM/DD"));
-const server = http.createServer((req, res) => {
-  console.log("runned");
-  console.log(req.url);
-  if (req.url === "/products") {
-    res.write(JSON.stringify({ product: [moment(new Date()).locale("fa").format("YYYY/MM/DD")] }));
-  } else if (req.url === "/") {
-    res.write("welcome to home page");
-  } else {
-    res.write("route not found");
-  }
-  res.end();
-});
-server.listen("3000");
+// const http = require("http");
+// const moment = require("jalali-moment");
+// // console.log(moment(new Date()).locale("fa").format("YYYY/MM/DD"));
+// const server = http.createServer((req, res) => {
+//   console.log("runned");
+//   console.log(req.url);
+//   if (req.url === "/products") {
+//     res.write(JSON.stringify({ product: [moment(new Date()).locale("fa").format("YYYY/MM/DD")] }));
+//   } else if (req.url === "/") {
+//     res.write("welcome to home page");
+//   } else {
+//     res.write("route not found");
+//   }
+//   res.end();
+// });
+// server.listen("3000");
 // ---------------------------------------------------package manage in node js -----------------------------------
 // const express = require("express")
 
