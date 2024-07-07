@@ -36,6 +36,8 @@ const server = http.createServer((req, res) => {
   console.log(req.url);
   if (req.url === "/products") {
     res.write(JSON.stringify({ product: [moment(new Date()).locale("fa").format("YYYY/MM/DD")] }));
+  } else if (req.url === "/") {
+    res.write("welcome to home page");
   } else {
     res.write("route not found");
   }
