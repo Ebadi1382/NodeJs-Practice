@@ -58,5 +58,16 @@ app.get("/api/user", (req, res) => {
     { id: 13, name: "barbod" },
   ]);
 });
-const port = process.env.PORT || 80
+app.get("/api/products", (req, res) => {
+  console.log(req.query);
+  let result = "not query received";
+  if (req.query.date || req.query.price) {
+    result = "query successful received";
+  }
+  res.send(result);
+});
+app.get("/api/user/:id", (req, res) => {
+  res.send({ id: req.params.id, name: `user ${req.params.id}` });
+});
+const port = process.env.PORT || 80;
 app.listen(port, () => console.log(`connected on port ${port}`));
