@@ -45,10 +45,17 @@
 // });
 // server.listen("3000");
 // ---------------------------------------------------package manage in node js -----------------------------------
-const express = require("express")
+const express = require("express");
 
-const app = express()
-app.get("/",(req,res)=> {
-  res.send("ok-200")
-})
-app.listen(80,()=>console.log("connected"))
+const app = express();
+app.get("/", (req, res) => {
+  res.send("ok-200");
+});
+app.get("/api/user", (req, res) => {
+  res.send([
+    { id: 1, name: "alireza" },
+    { id: 2, name: "razazz" },
+    { id: 3, name: "barbod" },
+  ]);
+});
+app.listen(80, () => console.log("connected"));
