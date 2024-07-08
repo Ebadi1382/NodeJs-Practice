@@ -46,17 +46,14 @@
 // server.listen("3000");
 // ---------------------------------------------------package manage in node js -----------------------------------
 const express = require("express");
+const user = require("./user.json");
 
 const app = express();
 app.get("/", (req, res) => {
   res.send("ok-200");
 });
 app.get("/api/user", (req, res) => {
-  res.send([
-    { id: 11, name: "alireza" },
-    { id: 12, name: "razazz" },
-    { id: 13, name: "barbod" },
-  ]);
+  res.json(user);
 });
 app.get("/api/products", (req, res) => {
   console.log(req.query);
@@ -67,7 +64,7 @@ app.get("/api/products", (req, res) => {
   res.send(result);
 });
 app.get("/api/user/:id", (req, res) => {
-  res.send({ id: req.params.id, name: `user ${req.params.id}` });
+  res.json(user);
 });
 const port = process.env.PORT || 80;
 app.listen(port, () => console.log(`connected on port ${port}`));
