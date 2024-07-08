@@ -53,9 +53,10 @@ app.get("/", (req, res) => {
 });
 app.get("/api/user", (req, res) => {
   res.send([
-    { id: 1, name: "alireza" },
-    { id: 2, name: "razazz" },
-    { id: 3, name: "barbod" },
+    { id: 11, name: "alireza" },
+    { id: 12, name: "razazz" },
+    { id: 13, name: "barbod" },
   ]);
 });
-app.listen(80, () => console.log("connected"));
+const port = process.env.PORT || 80
+app.listen(port, () => console.log(`connected on port ${port}`));
