@@ -45,10 +45,10 @@
 // });
 // server.listen("3000");
 // ---------------------------------------------------package manage in node js -----------------------------------
-// const express = require("express")
+const express = require("express")
 
-// const app = express()
-// app.get("/",(req,res)=> {
-//   res.send("ok-200")
-// })
-// app.listen(3000,()=>console.log("connected"))
+const app = express()
+app.get("/",(req,res)=> {
+  res.send("ok-200")
+})
+app.listen(80,()=>console.log("connected"))
