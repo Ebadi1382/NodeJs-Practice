@@ -64,7 +64,19 @@ app.get("/api/products", (req, res) => {
   res.send(result);
 });
 app.get("/api/user/:id", (req, res) => {
-  res.json(user);
+  //   let result = [];
+  //   user.filter((item, index) => {
+  //     if (item.id == req.params.id) {
+  //       result.push(item);
+  //     } else {
+  //       result.push("user not found");
+  //     }
+  //   });
+  let result = user.find((item) => item.id == req.params.id);
+  if (!result) {
+    return res.json(["user not found"]);
+  }
+  res.json(result);
 });
 const port = process.env.PORT || 80;
 app.listen(port, () => console.log(`connected on port ${port}`));
