@@ -47,8 +47,10 @@
 // ---------------------------------------------------package manage in node js -----------------------------------
 const express = require("express");
 const user = require("./user.json");
-
 const app = express();
+
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("ok-200");
 });
@@ -64,19 +66,15 @@ app.get("/api/products", (req, res) => {
   res.send(result);
 });
 app.get("/api/user/:id", (req, res) => {
-  //   let result = [];
-  //   user.filter((item, index) => {
-  //     if (item.id == req.params.id) {
-  //       result.push(item);
-  //     } else {
-  //       result.push("user not found");
-  //     }
-  //   });
   let result = user.find((item) => item.id == req.params.id);
   if (!result) {
-    return res.json(["user not found"]);
+    return res.status(404).json(["user not found"]);
   }
   res.json(result);
+});
+app.post("/api/user", (req, res) => {
+  console.log(req.body);
+  res.json("loading...");
 });
 const port = process.env.PORT || 80;
 app.listen(port, () => console.log(`connected on port ${port}`));
