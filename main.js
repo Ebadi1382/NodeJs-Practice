@@ -46,6 +46,7 @@
 // server.listen("3000");
 // ---------------------------------------------------package manage in node js -----------------------------------
 const express = require("express");
+const { body, validationResult } = require("express-validator");
 const user = require("./user.json");
 const app = express();
 
@@ -72,9 +73,22 @@ app.get("/api/user/:id", (req, res) => {
   }
   res.json(result);
 });
-app.post("/api/user", (req, res) => {
-  console.log(req.body);
-  res.json("loading...");
-});
+app.post(
+  "/api/user",
+  [
+    body("email", "the email format incorect").isEmail(),
+    body("email", "email not found").notEmpty(),
+    body("first_name", "first name not found").notEmpty(),
+    body("last_name", "last_name not found").notEmpty(),
+  ],
+  (req, res) => {
+    const errors = validationResult(req);
+    if (errors.isEmpty()) {
+      res.status(200).json({ message: "ok" });
+    } else {
+      res.status(400).json(errors.errors[0].msg);
+    }
+  }
+);
 const port = process.env.PORT || 80;
 app.listen(port, () => console.log(`connected on port ${port}`));
