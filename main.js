@@ -103,5 +103,14 @@ app.put("/api/user/:id", (req, res) => {
   });
   res.json({ updateData });
 });
+app.delete("/api/user/:id", (req, res) => {
+  let result = user.find((item) => item.id == req.params.id);
+  if (!result) {
+    return res.status(404).json(["user not found"]);
+  }
+  const index = user.indexOf(result);
+  user.splice(index, 1);
+  res.json({ user });
+});
 const port = process.env.PORT || 80;
 app.listen(port, () => console.log(`connected on port ${port}`));
